@@ -1,0 +1,13 @@
+{
+  "name": "content-editing-app",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "repository": "https://github.com/posth/content-editing-app.git",
+  "author": "mulqueen and posth",
+  "dependencies": {
+    "express": "~3.2.4",
+    "firebase": "~2.3.1",
+    "mailgun-js": "~0.7.6"
+  }
+}
