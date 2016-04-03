@@ -5,9 +5,9 @@
         .module('app.domains')
         .controller('DomainsController', DomainsController);
         
-    DomainsController.$inject = ['$firebaseArray'];
+    DomainsController.$inject = ['$firebaseArray', '$http', '$scope', '$q'];
         
-    function DomainsController($firebaseArray) {
+    function DomainsController($firebaseArray, $http, $scope, $q) {
         //can reference this instance/context of our controller in different areas of our code
         var vm = this;
         
@@ -27,6 +27,27 @@
         vm.addDomain = addDomain;
         
         vm.removeDomain = removeDomain;
+        
+        //clicking on div domain to start scraping it
+        vm.visitDomain = visitDomain;
+        
+        function visitDomain(domain) {
+            
+            var url = 'https://web-scraper-multimo.c9.io:8081/client';
+
+            var data = domain;
+            
+            var response = $http.post(url, data)
+                .success(function(response) {
+                   
+                    vm.response =  response;
+                });
+      
+              
+            }
+        
+        
+    
         
         function addDomain() {
             vm.domains.$add(vm.newDomain);

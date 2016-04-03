@@ -1,3 +1,5 @@
+
+
 <form ng-submit="vm.addDomain()" class="form-inline party-form">
     <div class="form-group">
         <input type="text" ng-model="vm.newDomain.url" class="form-control" placeholder="Domain" required>
@@ -13,14 +15,17 @@
     </thead>
     <tr ng-repeat="domain in vm.domains">
         <td>
-            <div> {{domain.url}}</div>
+            <div ng-click="vm.visitDomain(domain)"> {{domain.url}}</div>
         </td>
         <td>
             <button ng-click="vm.removeDomain(domain)" class="btn btn-danger">Remove</button>
         </td>
+
     </tr>
     
 </table>
+
+<p>{{vm.response}}</p>
 
 
 

@@ -6,8 +6,10 @@
   "repository": "https://github.com/posth/content-editing-app.git",
   "author": "mulqueen and posth",
   "dependencies": {
-    "express": "~3.2.4",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
     "firebase": "~2.3.1",
+    "gulp": "^3.9.1",
     "mailgun-js": "~0.7.6"
   }
 }
