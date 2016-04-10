@@ -17,15 +17,88 @@
         <td>
             <div ng-click="vm.visitDomain(domain)"> {{domain.url}}</div>
         </td>
+        
         <td>
+            <!-- this one scrapes entire page -->
+            <button ng-click="vm.visitDomain(domain)" class="btn btn-primary">Scrape Page</button>
+
+            <!-- this one scrapes links-->
+            <button ng-click="vm.linksDomain(domain)" class="btn btn-info">Links</button>
+
+            <!--  this one removes links from table / db-->
             <button ng-click="vm.removeDomain(domain)" class="btn btn-danger">Remove</button>
         </td>
-
     </tr>
     
+    
 </table>
+<!-- Testing output below using inline styles so its easier to remove. 
+this should probs be on a different page/route 
 
-<p>{{vm.response}}</p>
+i think we either need to have a full object that seperates sites, links and pages
+so we can choose to render based on whats in the object
+
+or alternatively we just seperate directives for each page
+ so that the they are scopes locally to that page
+-->
+        <style type="text/css">
+            .output {
+                margin: 20px;
+                border: 3px solid red;
+                background: #333;
+                color: white;
+                width: 100%;
+                padding: 20px;
+                float: left;
+            }
+            .output-links {
+                margin: 20px;
+                border: 3px solid red;
+                background: #333;
+                color: white;
+                width: 45%;
+                padding: 20px;
+                float: left;
+            }
+            .links-ctn {
+                padding: 10px 5px;
+                display: block;
+                width: 100%;
+            }
+        </style>
+        
+        <div class="output" ng-show="vm.page">
+            <h2 ng-hide>Scrape output</h2>
+            
+            <!-- track by $index keys each item, angular throws errors for dupes
+            https://docs.angularjs.org/error/ngRepeat/dupes
+            -->
+           <p ng-repeat="item in vm.page track by $index">
+                {{ item }}
+           </p>
+        </div>
+        <div class="output-links" ng-show="vm.links">
+            <h2>Links output</h2>
+            <div ng-repeat="links in vm.links" class="links-ctn">
+                <h4>{{ links.a }}</h4>
+                <p>{{ links.href }}</p>
+                
+                <button ng-click="vm.addLinks(links)" class="btn btn-primary">Add Page</button>
+            </div>
+            
+        </div>
+        
+        
+        <div class="output-links" ng-show="vm.addLinks.links[0]">
+            <h2>Add Links to scraper</h2>
+            <div ng-repeat="items in vm.addLinks.links track by $index" class="links-ctn">
+              <h4 class="col-md-8">{{ items.a }}</h4>
+              <button class="btn btn-danger col-md-4" ng-click="vm.removeLinks(items)">X</button>
+            </div>
+            
+            <button ng-click="vm.allPages(vm.addLinks.links)" class="btn btn-info col-md-12">Subbmit</button>
+        </div>
+
 
 
 
