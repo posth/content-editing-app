@@ -15,7 +15,7 @@
     </thead>
     <tr ng-repeat="domain in vm.domains">
         <td>
-            <div ng-click="vm.visitDomain(domain)"> {{domain.url}}</div>
+            <div> {{domain.url}}</div>
         </td>
         
         <td>
@@ -67,7 +67,7 @@ or alternatively we just seperate directives for each page
             }
         </style>
         
-        <div class="output" ng-show="vm.page">
+        <div contentEditable="true" class="output" ng-show="vm.page">
             <h2 ng-hide>Scrape output</h2>
             
             <!-- track by $index keys each item, angular throws errors for dupes

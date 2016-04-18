@@ -1,9 +1,33 @@
-//TODO: Gulp task automation
-//TODO: set up post request for scrape
-//TODO: 
-//TODO:
-//TODO:
+//TODO: run app off express server instead of index.html file
 
-https://content-editing-app-posth.c9users.io/a
+//TODO: set up post request for scrape - done
+
+//TODO: allow links to be displayed under domains for each domain
+
+//TODO: use links/pages as a navigation to pass page name and content to editor module
+
+//TODO: set up events to listen to all changes on the content of the page
+
+//TODO: have save send all changes back to server and ?scraper? for distribution
+
+
+
+longterm TODOS:
+
+//TODO: set up pagnation function on scraper api for DB when it gets a sites list of pages
+//TODO: set up scraper api on same server as app?
+//TODO: figure a way to keep content scrapeds html tag so we can transfere styling 
+or sematics of the html to an extent
+//TODO: Falcor the urinator? to handle api requests to server and scraper, handle
+pushing of data to view and to cashe requests for user
+//TODO: set up Observables on the content editable interface so chnages are easier 
+to think about and make UI async with the changes and the requests, (could be over kill)
+//TODO: updated angular to angular 2 or angular 1.5 for compenent approach
+
+
+
+https://content-editing-app-posth.c9users.io/
+
+
 
 

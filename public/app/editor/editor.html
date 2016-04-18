@@ -1,0 +1,15 @@
+
+<!--title of the page being edited-->
+<article>
+<h1>{{ vm.link.a }}</h1>
+
+<!--alternatives to contentEditable are probably better, textAngular seems to be the favourite-->
+
+<section contentEditable="true">
+  <p ng-repeat="item in vm.page track by $index">
+                {{ item }}
+  </p>
+</section>
+
+
+</article>

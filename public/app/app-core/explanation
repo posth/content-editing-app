@@ -1,0 +1,9 @@
+we need to move all our datacalls into a service and out of controllers. 
+
+this will allow us to pass data between modules and simplify our controllers
+
+https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#modules
+
+@ dataservices
+
+https://github.com/johnpapa/ng-demos/blob/master/modular/src/client/app/core/dataservice.js
